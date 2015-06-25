@@ -21,13 +21,13 @@ namespace KuasCore.Dao.Impl
 
         public void AddGoods(Goods goods)
         {
-            string command = @"INSERT INTO goods (id, name, price,count,describe,time,type) VALUES (@id, @name, @price,@count,@describe,@time,@type);";
+            string command = @"INSERT INTO goods (id, name, price,num,describe,time,type) VALUES (@id, @name, @price,@num,@describe,@time,@type);";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("id", DbType.String).Value = goods.id;
             parameters.Add("name", DbType.String).Value = goods.name;
             parameters.Add("price", DbType.Int32).Value = goods.price;
-            parameters.Add("count", DbType.Int32).Value = goods.count;
+            parameters.Add("num", DbType.Int32).Value = goods.num;
             parameters.Add("describe", DbType.String).Value = goods.describe;
             parameters.Add("time", DbType.DateTime).Value = goods.time;
             parameters.Add("type", DbType.String).Value = goods.type;
@@ -36,13 +36,13 @@ namespace KuasCore.Dao.Impl
         
         public void UpdateGoods(Goods goods)
         {
-            string command = @"UPDATE goods SET name = @name, price = @price ,count = @count , describe = @describe , time = @time , type=@type WHERE id = @id;";
+            string command = @"UPDATE goods SET name = @name, price = @price ,num = @num , describe = @describe , time = @time , type=@type WHERE id = @id;";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("id", DbType.String).Value = goods.id;
             parameters.Add("name", DbType.String).Value = goods.name;
-            parameters.Add("price", DbType.Int16).Value = goods.price;
-            parameters.Add("count", DbType.Int16).Value = goods.count;
+            parameters.Add("price", DbType.Int32).Value = goods.price;
+            parameters.Add("num", DbType.Int32).Value = goods.num;
             parameters.Add("describe", DbType.String).Value = goods.describe;
             parameters.Add("time", DbType.DateTime).Value = goods.time;
             parameters.Add("type", DbType.String).Value = goods.type;
@@ -75,7 +75,7 @@ namespace KuasCore.Dao.Impl
             parameters.Add("name", DbType.String).Value = name;
 
             IList<Goods> goods = ExecuteQueryWithRowMapper(command, parameters);
-            if (goods.Count > 0)
+            if (goods.Count() > 0)
             {
                 return goods[0];
             }
@@ -91,7 +91,7 @@ namespace KuasCore.Dao.Impl
             parameters.Add("id", DbType.String).Value = id;
 
             IList<Goods> goods = ExecuteQueryWithRowMapper(command, parameters);
-            if (goods.Count > 0)
+            if (goods.Count() > 0)
             {
                 return goods[0];
             }

@@ -14,7 +14,7 @@ namespace KuasCore.Models
 
         public Int32 price { get; set; }
 
-        public Int32 count { get; set; }
+        public Int32 num { get; set; }
         
         public string describe { get; set; }
 
