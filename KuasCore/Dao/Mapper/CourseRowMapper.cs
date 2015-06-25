@@ -15,7 +15,7 @@ namespace KuasCore.Dao.Mapper
         {
             Course target = new Course();
 
-            target.Id = dataReader.GetString(dataReader.GetOrdinal("Course_ID"));
+            target.Id = dataReader.GetString(dataReader.GetOrdinal("Course_Id"));
             target.Name = dataReader.GetString(dataReader.GetOrdinal("Course_Name"));
             target.Description = dataReader.GetString(dataReader.GetOrdinal("Course_Description"));
 

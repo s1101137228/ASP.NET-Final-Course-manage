@@ -69,7 +69,7 @@ namespace KuasWebApp.Controllers
         {
             var goods = GoodsService.GetGoodsById(id);
 
-            if (goods == null)
+            if (goods != null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
@@ -97,13 +97,14 @@ namespace KuasWebApp.Controllers
         /// <param name="course">
         ///     課程資料.
         /// </param>
+        
         private void CheckGoodsIsNullThrowException(Goods goods)
         {
             Goods dbGoods = GoodsService.GetGoodsById(goods.id);
 
-            if (dbGoods == null)
+            if (dbGoods != null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                
             }
         }
 

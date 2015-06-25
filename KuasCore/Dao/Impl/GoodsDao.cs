@@ -21,7 +21,7 @@ namespace KuasCore.Dao.Impl
 
         public void AddGoods(Goods goods)
         {
-            string command = @"INSERT INTO goods (id, name, price,num,describe,time,type) VALUES (@id, @name, @price,@num,@describe,@time,@type);";
+            string command = @"INSERT INTO goods (id, name, price , num , describe ,time , type ) VALUES (@id, @name, @price,@num,@describe,@time,@type);";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("id", DbType.String).Value = goods.id;

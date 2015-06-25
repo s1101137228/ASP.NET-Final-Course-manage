@@ -13,7 +13,7 @@
     <property name="AdoTemplate" ref="adoTemplate" />
   </object>
   
-  <!---->
+  
   
   <object id="goodsController" scope="request" singleton="false" type="KuasWebApp.Controllers.GoodsController, KuasWebApp">
     <property name="GoodsService" ref="goodsService" />

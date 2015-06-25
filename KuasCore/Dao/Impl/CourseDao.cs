@@ -21,7 +21,7 @@ namespace KuasCore.Dao.Impl
 
         public void AddCourse(Course course)
         {
-            string command = @"INSERT INTO Course (Course_ID, Course_Name, Course_Description) VALUES (@Id, @Name, @Description);";
+            string command = @"INSERT INTO Course (Course_Id, Course_Name, Course_Description) VALUES (@Id, @Name, @Description);";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("Id", DbType.String).Value = course.Id;
@@ -78,7 +78,7 @@ namespace KuasCore.Dao.Impl
 
         public Course GetCourseById(string id)
         {
-            string command = @"SELECT * FROM Course WHERE Course_ID = @id";
+            string command = @"SELECT * FROM Course WHERE Course_Id = @id";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("id", DbType.String).Value = id;
