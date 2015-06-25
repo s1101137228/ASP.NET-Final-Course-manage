@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body style="background-color:cadetblue">
+    <div style="text-align:center">
+        <br><br><br><br><br><br>
+        <h3>使用您的帳號登入</h3>
+    </div>
+    <div style="text-align:center">
+        <font face="微軟正黑體">
+            <label>帳號</label>
+            <input type="text" id="account" name="account" placeholder="帳號" size="18" required><br /><br />
+            <label>密碼</label>
+            <input type="password" id="password" name="password" placeholder="密碼" size="18" required><br /><br />
+            <input type="button" onclick="Check()" value="登入">
+        </font>
+    </div>
+</body>
+</html>
+
+
+<script>
+    function Check()
+    {
+        var account = document.getElementById("account").value;
+        var password = document.getElementById("password").value;
+
+        if(account == "admin" && password == "1234")
+        {
+            alert("登入成功 ... 請稍後");
+            location.assign("Goods.html");
+        }
+        else
+        {
+            alert("帳號密碼錯誤 ， 請重新輸入");
+        }
+    }
+
+</script>
