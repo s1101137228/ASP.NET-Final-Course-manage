@@ -2,12 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>GoodsManage</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.common-material.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.material.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.material.min.css" />
-
     <script src="http://cdn.kendostatic.com/2015.1.429/js/jquery.min.js"></script>
     <script src="http://cdn.kendostatic.com/2015.1.429/js/kendo.all.min.js"></script>
 </head>
@@ -24,17 +23,17 @@
                     dataType: "jsonp",
                     transport: {
                         read: {
-                            url: UrlBase+"api/Goods",
+                            url: UrlBase + "api/Goods",
                             contentType: "application/json; charset=utf-8",
                             type: "GET"
                         },
                         create: {
-                            url: UrlBase+"api/Goods",
+                            url: UrlBase + "api/Goods",
                             contentType: "application/json; charset=utf-8",
                             type: "POST"
                         },
                         update: {
-                            url: UrlBase+"api/Goods",
+                            url: UrlBase + "api/Goods",
                             contentType: "application/json; charset=utf-8",
                             type: "PUT"
                         },
@@ -53,7 +52,7 @@
                         model: {
                             id: "id",
                             fields: {
-                                id  : { type: "string", editable: true, nullable: false },
+                                id: { type: "string", editable: true, nullable: false },
                                 name: { type: "string", editable: true, nullable: false },
                                 price: { type: "int", editable: true },
                                 count: { type: "int", editable: true },
@@ -77,7 +76,7 @@
                     numeric: false
                 },
                 columns: [
-                    { field: "id"  , title: "編號" , width: "75px" },
+                    { field: "id", title: "編號", width: "75px" },
                     { field: "name", title: "名稱", width: "100px" },
                     { field: "price", title: "價錢", width: "75px" },
                     { field: "count", title: "數量", width: "75px" },
@@ -92,3 +91,6 @@
     </script>
 </body>
 </html>
+<script>
+    
+</script>
