@@ -21,24 +21,26 @@ namespace KuasCore.Dao.Impl
 
         public void AddCourse(Course course)
         {
-            string command = @"INSERT INTO Course (Course_Id, Course_Name, Course_Description) VALUES (@Id, @Name, @Description);";
+            string command = @"INSERT INTO Course (Course_Id, Course_Name, Course_Description, Course_Essential) VALUES (@Id, @Name, @Description , @Essential);";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("Id", DbType.String).Value = course.Id;
             parameters.Add("Name", DbType.String).Value = course.Name;
             parameters.Add("Description", DbType.String).Value = course.Description;
+            parameters.Add("Essential", DbType.String).Value = course.Essential;
 
             ExecuteNonQuery(command, parameters);
         }
 
         public void UpdateCourse(Course course)
         {
-            string command = @"UPDATE Course SET Course_Name = @Name, Course_Description = @Description WHERE Course_Id = @Id;";
+            string command = @"UPDATE Course SET Course_Name = @Name, Course_Description = @Description , Course_Essential = @Essential WHERE Course_Id = @Id;";
 
             IDbParameters parameters = CreateDbParameters();
             parameters.Add("Id", DbType.String).Value = course.Id;
             parameters.Add("Name", DbType.String).Value = course.Name;
             parameters.Add("Description", DbType.String).Value = course.Description;
+            parameters.Add("Essential", DbType.String).Value = course.Essential;
 
             ExecuteNonQuery(command, parameters);
         }

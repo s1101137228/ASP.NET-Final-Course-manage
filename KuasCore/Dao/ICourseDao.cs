@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace KuasCore.Dao
 {
-     public interface ICourseDao
+    public interface ICourseDao
     {
-         void AddCourse(Course course);
+        void AddCourse(Course course);
 
-         void UpdateCourse(Course course);
+        void UpdateCourse(Course course);
 
-         void DeleteCourse(Course course);
+        void DeleteCourse(Course course);
 
-         IList<Course> GetAllCourse();
+        IList<Course> GetAllCourse();
 
-         Course GetCourseByName(string name);
+        Course GetCourseByName(string name);
 
-         Course GetCourseById(string id);
+        Course GetCourseById(string id);
 
     }
 }

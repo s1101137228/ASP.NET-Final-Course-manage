@@ -12,6 +12,8 @@ namespace KuasCore.Models
 
         public string Name { get; set; }
 
+        public string Essential { get; set; }
+
         public string Description { get; set; }
 
         public override string ToString()
